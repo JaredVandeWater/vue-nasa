@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <MarsSearch />
     <MarsPic v-for="mp in marsPics" :key="mp.imgURL" :mars="mp" />
   </div>
 </template>
