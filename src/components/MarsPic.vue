@@ -1,6 +1,6 @@
 <template>
   <div class="col-3 m-2">
-    <button v-if="state.myPics.indexOf(mars) == -1" @click="likePic" class="top-right m-3">
+    <button v-if="liked" @click="likePic" class="top-right m-3">
       <i class="fas fa-heart"></i>
     </button>
     <img class="w-100 img-size img-fluid" :src="mars.imgURL" alt="" srcset="">
@@ -23,6 +23,7 @@ export default {
     })
     return {
       state,
+      liked: computed(() => state.myPics.find(p => p.imgId === props.mars.imgId)),
       likePic() {
         console.log(props.mars, 'dd')
         if (state.user.isAuthenticated) {
