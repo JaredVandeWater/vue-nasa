@@ -5,5 +5,7 @@ export const AppState = reactive({
   user: {},
   account: {},
   dailyPic: {},
-  marsImages: []
+  marsImages: [],
+  marsDate: '2019-7-3',
+  myMarsImages: []
 })

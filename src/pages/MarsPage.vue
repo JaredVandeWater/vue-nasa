@@ -1,7 +1,13 @@
 <template>
-  <div class="about">
-    <MarsSearch />
-    <MarsPic v-for="mp in marsPics" :key="mp.imgURL" :mars="mp" />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="about">
+        <MarsSearch />
+      </div>
+    </div>
+    <div v-if="marsPics" class="row">
+      <MarsPic v-for="mp in marsPics" :key="mp.imgURL" :mars="mp" />
+    </div>
   </div>
 </template>
 
@@ -10,7 +16,7 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { marsPicService } from '../services/MarsPicService'
 import { AppState } from '../AppState'
 export default {
-  name: 'AboutPage',
+  name: 'MarsPage',
   setup() {
     onMounted(() => {
       try {

@@ -6,12 +6,17 @@
 </template>
 
 <script>
+import { AppState } from '../AppState'
+import { marsPicService } from '../services/MarsPicService'
 export default {
   setup() {
     return {
       marsDate: null,
       changeDate() {
-        console.log(this.marsDate)
+        AppState.marsDate = null
+        AppState.marsDate = this.marsDate
+        marsPicService.grabMarsPics()
+        console.log(AppState.marsDate)
       }
     }
   }
